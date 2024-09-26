@@ -1,97 +1,16 @@
-port: 7890
-socks-port: 7891
-redir-port: 7892
-mixed-port: 7893
-tproxy-port: 7895
-ipv6: false
-mode: rule
-log-level: silent
-allow-lan: true
-external-controller: 0.0.0.0:9090
-secret: ""
-bind-address: "*"
-unified-delay: true
-profile:
-  store-selected: true
-dns:
-  enable: true
-  ipv6: false
-  enhanced-mode: redir-host
-  listen: 0.0.0.0:7874
-  nameserver:
-    - 8.8.8.8
-    - 1.0.0.1
-    - https://dns.google/dns-query
-  fallback:
-    - 1.1.1.1
-    - 8.8.4.4
-    - https://cloudflare-dns.com/dns-query
-    - 112.215.203.254
-  default-nameserver:
-    - 8.8.8.8
-    - 1.1.1.1
-    - 112.215.203.254
 proxies:
-  - name: "[Trojan] Jalaid-ID4_2024-09-29_WS"
-    server: quiz.int.vidio.com
-    port: 443
-    type: trojan
-    password: Jalaid
-    skip-cert-verify: true
-    sni: id4.hijitoko.com
-    network: ws
-    ws-opts:
-      path: /trojan
-      headers:
-        Host: id4.hijitoko.com
-    udp: true
-  - name: "[Vless] trial847-IDCX2_2024-09-20_WS"
+  - name: Vidio+(SG)++Oracle+Corporation
     server: quiz.int.vidio.com
     port: 443
     type: vless
-    uuid: f2ab20fc-4b10-471b-90d4-052bf5d0cf49
+    uuid: 00000000-0000-0000-0000-000000000000
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: idcx2.nekotun.com
+    servername: quiz.int.vidio.com.uwu.cloudflere.us.kg
     network: ws
     ws-opts:
-      path: /vless
+      path: /129.150.50.63
       headers:
-        Host: idcx2.nekotun.com
+        Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
     udp: true
-proxy-groups:
-  - name: FASTSSH-SSHKIT-HOWDY
-    type: select
-    proxies:
-      - "[Trojan] Jalaid-ID4_2024-09-29_WS"
-      - "[Vless] trial847-IDCX2_2024-09-20_WS"
-      - LOAD-BALANCE
-      - BEST-PING
-      - FALLBACK
-      - DIRECT
-  - name: LOAD-BALANCE
-    type: load-balance
-    strategy: consistent-hashing
-    url: http://hi.bonds.id/ping
-    interval: 300
-    proxies:
-      - "[Trojan] Jalaid-ID4_2024-09-29_WS"
-      - "[Vless] trial847-IDCX2_2024-09-20_WS"
-  - name: BEST-PING
-    type: url-test
-    url: http://hi.bonds.id/ping
-    interval: 300
-    tolerance: 50
-    proxies:
-      - "[Trojan] Jalaid-ID4_2024-09-29_WS"
-      - "[Vless] trial847-IDCX2_2024-09-20_WS"
-  - name: FALLBACK
-    type: fallback
-    url: http://hi.bonds.id/ping
-    interval: 300
-    proxies:
-      - "[Trojan] Jalaid-ID4_2024-09-29_WS"
-      - "[Vless] trial847-IDCX2_2024-09-20_WS"
-rules:
- - MATCH,FASTSSH-SSHKIT-HOWDY

@@ -1,29 +1,43 @@
 proxies:
-  - name: Vidio+(SG)++First+Server+Limited
-    server: quiz.int.vidio.com
+  - name: Amazon.com (ID)
+    server: vltr.vpnoir9r.us.kg
     type: vless
     port: 443
     uuid: 00000000-0000-0000-0000-000000000000
     tls: true
     skip-cert-verify: true
-    servername: quiz.int.vidio.com.uwu.cloudflere.us.kg
+    servername: vltr.vpnoir9r.us.kg
     network: ws
     ws-opts:
-      path: /194.36.179.237
+      path: /vl=43.218.79.114:2053
       headers:
-        Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
+        Host: vltr.vpnoir9r.us.kg
     udp: true
-  - name: Vidio+(SG)++Akamai+Technologies
-    server: quiz.int.vidio.com
+  - name: Akamai Connected Cloud (ID)
+    server: vltr.vpnoir9r.us.kg
     type: vless
     port: 443
     uuid: 00000000-0000-0000-0000-000000000000
     tls: true
     skip-cert-verify: true
-    servername: quiz.int.vidio.com.uwu.cloudflere.us.kg
+    servername: vltr.vpnoir9r.us.kg
     network: ws
     ws-opts:
-      path: /172.104.191.203
+      path: /vl=172.232.234.119:587
       headers:
-        Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
+        Host: vltr.vpnoir9r.us.kg
+    udp: true
+  - name: Alibaba (US) Technology Co. (ID)
+    server: vltr.vpnoir9r.us.kg
+    type: vless
+    port: 443
+    uuid: 00000000-0000-0000-0000-000000000000
+    tls: true
+    skip-cert-verify: true
+    servername: vltr.vpnoir9r.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=8.215.23.33:587
+      headers:
+        Host: vltr.vpnoir9r.us.kg
     udp: true

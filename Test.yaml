@@ -14,3 +14,17 @@ proxies:
       headers:
         Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
     udp: true
+  - name: Vidio+(SG)++Akamai+Technologies
+    server: quiz.int.vidio.com
+    type: vless
+    port: 443
+    uuid: 00000000-0000-0000-0000-000000000000
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.uwu.cloudflere.us.kg
+    network: ws
+    ws-opts:
+      path: /172.104.191.203
+      headers:
+        Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
+    udp: true

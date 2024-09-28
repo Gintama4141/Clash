@@ -13,31 +13,3 @@ proxies:
       headers:
         Host: vltr.vpnoir9r.us.kg
     udp: true
-  - name: Akamai Connected Cloud (ID)
-    server: vltr.vpnoir9r.us.kg
-    type: vless
-    port: 443
-    uuid: 00000000-0000-0000-0000-000000000000
-    tls: true
-    skip-cert-verify: true
-    servername: vltr.vpnoir9r.us.kg
-    network: ws
-    ws-opts:
-      path: /vl=172.232.234.119:587
-      headers:
-        Host: vltr.vpnoir9r.us.kg
-    udp: true
-  - name: Alibaba (US) Technology Co. (ID)
-    server: vltr.vpnoir9r.us.kg
-    type: vless
-    port: 443
-    uuid: 00000000-0000-0000-0000-000000000000
-    tls: true
-    skip-cert-verify: true
-    servername: vltr.vpnoir9r.us.kg
-    network: ws
-    ws-opts:
-      path: /vl=8.215.23.33:587
-      headers:
-        Host: vltr.vpnoir9r.us.kg
-    udp: true

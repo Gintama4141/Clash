@@ -1,5 +1,5 @@
 proxies:
-  - name: Vidio+(SG)++Akamai+Technologies
+  - name: SG AKAMAI
     server: quiz.int.vidio.com
     port: 443
     type: vless

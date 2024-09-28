@@ -1,15 +1,31 @@
 proxies:
-  - name: Amazon.com (ID)
-    server: vltr.vpnoir9r.us.kg
-    type: vless
+  - name: Amazon ID
+    server: quiz.int.vidio.com
     port: 443
+    type: vless
     uuid: 00000000-0000-0000-0000-000000000000
+    cipher: auto
     tls: true
     skip-cert-verify: true
     servername: vltr.vpnoir9r.us.kg
     network: ws
     ws-opts:
-      path: /vl=43.218.79.114:2053
+      path: /vl=43.218.79.114:8443
+      headers:
+        Host: vltr.vpnoir9r.us.kg
+    udp: true
+  - name: Akamai ID
+    server: quiz.int.vidio.com
+    port: 443
+    type: vless
+    uuid: 00000000-0000-0000-0000-000000000000
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vltr.vpnoir9r.us.kg
+    network: ws
+    ws-opts:
+      path: /vl=172.232.252.35:587
       headers:
         Host: vltr.vpnoir9r.us.kg
     udp: true

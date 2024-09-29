@@ -1,31 +1,16 @@
 proxies:
-  - name: SG AKAMAI
+  - name: SG AWS
     server: quiz.int.vidio.com
     port: 443
     type: vless
-    uuid: 00000000-0000-0000-0000-000000000000
+    uuid: b7863287-04f1-4e3e-8733-5716ae788382
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: quiz.int.vidio.com.uwu.cloudflere.us.kg
+    servername: quiz.int.vidio.com.sg-vpnvip.my.id
     network: ws
     ws-opts:
-      path: /172.104.191.203
+      path: /vlesscf
       headers:
-        Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
-    udp: true
-  - name: SG First Server
-    server: quiz.int.vidio.com
-    port: 443
-    type: vless
-    uuid: 00000000-0000-0000-0000-000000000000
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: quiz.int.vidio.com.uwu.cloudflere.us.kg
-    network: ws
-    ws-opts:
-      path: /194.36.179.237
-      headers:
-        Host: quiz.int.vidio.com.uwu.cloudflere.us.kg
+        Host: quiz.int.vidio.com.sg-vpnvip.my.id
     udp: true

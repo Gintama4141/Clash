@@ -1,0 +1,270 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent # info / warning / error / debug / silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+# external-ui: ui
+# external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
+secret: ""
+bind-address: "*"
+unified-delay: true
+geodata-loader: memconservative # standard / memconservative
+geodata-mode: false # dont forget make true for use geodata
+geo-auto-update: true
+geo-update-interval: 24
+geox-url:
+  geoip: "https://github.com/malikshi/v2ray-rules-dat/releases/latest/download/geoip.dat"
+  geosite: "https://github.com/malikshi/v2ray-rules-dat/releases/latest/download/geosite.dat"
+  mmdb: "https://github.com/Loyalsoldier/geoip/releases/latest/download/Country.mmdb"
+  asn: "https://github.com/xishang0128/geoip/releases/download/latest/GeoLite2-ASN.mmdb"
+profile:
+  store-selected: true
+  store-fake-ip: true
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    QUIC:
+      ports: [443,8443]
+      override-destination: true
+tun:
+  enable: false
+  mtu: 9000
+  device: tun0
+  stack: mixed # gvisor / mixed / lwip
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  auto-route: true
+  strict-route: false
+  auto-redirect: true
+  auto-detect-interface: true
+  include-android-user: [0, 10]
+  exclude-package: []
+  include-package: []
+  keep-alive-interval: 30
+  global-client-fingerprint: random
+  tcp-concurrent: false
+dns:
+  enable: true
+  ipv6: false
+  prefer-h3: false
+  use-host: true
+  enhanced-mode: fake-ip
+  listen: 0.0.0.0:7874
+  nameserver:
+  - https://cloudflare-dns.com/dns-query
+  - https://dns.google/dns-query
+  fallback:
+  - tls://1.1.1.1
+  - tls://8.8.4.4
+  default-nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+  - 1.1.1.1
+  - 1.0.0.1
+  proxy-server-nameserver:
+  - 112.215.203.246 #DNS XL
+  - 112.215.203.247 #DNS XL
+  - 112.215.203.248 #DNS XL
+  - 112.215.203.254 #DNS XL
+  - 112.215.198.248 #DNS XL
+  - 112.215.198.254 #DNS XL
+  - "[2400:9800:2:2::246]" # DNS XL
+  nameserver-policy:
+    '+.googlesyndication.com': '1.1.1.1'
+    'geosite:category-ads-all': rcode://success
+  respect-rules: true
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+  - "*.lan"
+  - "*.localdomain"
+  - "*.example"
+  - "*.invalid"
+  - "*.localhost"
+  - "*.test"
+  - "*.local"
+  - "*.home.arpa"
+  - time.*.com
+  - time.*.gov
+  - time.*.edu.cn
+  - time.*.apple.com
+  - time1.*.com
+  - time2.*.com
+  - time3.*.com
+  - time4.*.com
+  - time5.*.com
+  - time6.*.com
+  - time7.*.com
+  - ntp.*.com
+  - ntp1.*.com
+  - ntp2.*.com
+  - ntp3.*.com
+  - ntp4.*.com
+  - ntp5.*.com
+  - ntp6.*.com
+  - ntp7.*.com
+  - "*.time.edu.cn"
+  - "*.ntp.org.cn"
+  - "+.pool.ntp.org"
+  - time1.cloud.tencent.com
+  - music.163.com
+  - "*.music.163.com"
+  - "*.126.net"
+  - musicapi.taihe.com
+  - music.taihe.com
+  - songsearch.kugou.com
+  - trackercdn.kugou.com
+  - "*.kuwo.cn"
+  - api-jooxtt.sanook.com
+  - api.joox.com
+  - joox.com
+  - y.qq.com
+  - "*.y.qq.com"
+  - streamoc.music.tc.qq.com
+  - mobileoc.music.tc.qq.com
+  - isure.stream.qqmusic.qq.com
+  - dl.stream.qqmusic.qq.com
+  - aqqmusic.tc.qq.com
+  - amobile.music.tc.qq.com
+  - "*.xiami.com"
+  - "*.music.migu.cn"
+  - music.migu.cn
+  - "+.msftconnecttest.com"
+  - "+.msftncsi.com"
+  - msftconnecttest.com
+  - msftncsi.com
+  - localhost.ptlogin2.qq.com
+  - localhost.sec.qq.com
+  - "+.srv.nintendo.net"
+  - "*.n.n.srv.nintendo.net"
+  - "+.stun.playstation.net"
+  - xbox.*.*.microsoft.com
+  - "*.*.xboxlive.com"
+  - xbox.*.microsoft.com
+  - xnotify.xboxlive.com
+  - "+.battlenet.com.cn"
+  - "+.wotgame.cn"
+  - "+.wggames.cn"
+  - "+.wowsgame.cn"
+  - "+.wargaming.net"
+  - proxy.golang.org
+  - stun.*.*
+  - stun.*.*.*
+  - "+.stun.*.*"
+  - "+.stun.*.*.*"
+  - "+.stun.*.*.*.*"
+  - "+.stun.*.*.*.*.*"
+  - heartbeat.belkin.com
+  - "*.linksys.com"
+  - "*.linksyssmartwifi.com"
+  - "*.router.asus.com"
+  - mesu.apple.com
+  - swscan.apple.com
+  - swquery.apple.com
+  - swdownload.apple.com
+  - swcdn.apple.com
+  - swdist.apple.com
+  - lens.l.google.com
+  - stun.l.google.com
+  - "+.nflxvideo.net"
+  - "*.square-enix.com"
+  - "*.finalfantasyxiv.com"
+  - "*.ffxiv.com"
+  - "*.ff14.sdo.com"
+  - ff.dorado.sdo.com
+  - "*.mcdn.bilivideo.cn"
+  - "+.media.dssott.com"
+  - time-ios.apple.com
+  - shark007.net
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    ipcidr:
+    - 0.0.0.0/8
+    - 10.0.0.0/8
+    - 100.64.0.0/10
+    - 127.0.0.0/8
+    - 169.254.0.0/16
+    - 172.16.0.0/12
+    - 192.0.0.0/24
+    - 192.0.2.0/24
+    - 192.88.99.0/24
+    - 192.168.0.0/16
+    - 198.18.0.0/15
+    - 198.51.100.0/24
+    - 203.0.113.0/24
+    - 224.0.0.0/4
+    - 240.0.0.0/4
+    - 255.255.255.255/32
+    domain:
+    - "+.google.com"
+    - "+.facebook.com"
+    - "+.youtube.com"
+    - "+.githubusercontent.com"
+    - "+.googlevideo.com"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+    - msftconnecttest.com
+    - msftncsi.com
+    - "+.*"
+proxy-providers:
+  INDO:
+    type: file
+    path: "./indo.yaml"
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 90
+  BACKUP:
+    type: http
+    url: https://raw.githubusercontent.com/Gintama4141/Clash/refs/heads/main/Akunid.yaml
+    path: "./Akunid.yaml"
+    interval: 1440
+    health-check:
+      enable: true
+      url: https://cp.cloudflare.com/generate_204
+      interval: 90
+proxy-groups:
+  - name: MENU
+    type: fallback
+    url: https://cp.cloudflare.com/generate_204
+    interval: 5
+    lazy: true
+    disable-udp: false
+    proxies:
+      - INDO
+      - BACKUP INDO
+  - name: INDO
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 10
+    tolerance: 10
+    strategy: round-robin
+    disable-udp: false
+    use:
+    - INDO
+  - name: BACKUP INDO
+    type: url-test
+    url: https://cp.cloudflare.com/generate_204
+    interval: 300
+    tolerance: 50
+    strategy: round-robin
+    disable-udp: false
+    use:
+    - BACKUP
+rules:
+  - MATCH,MENU

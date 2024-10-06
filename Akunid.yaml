@@ -1,5 +1,5 @@
 proxies:
-  - name: HOSTKEY B.V. ðŸ‡®ðŸ‡©
+  - name: HOSTKEY B.V.
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -14,7 +14,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: ðŸ‡·ðŸ‡º Rumahweb ðŸ‡®ðŸ‡©
+  - name: Rumahweb
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -29,7 +29,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: Pt. Beon Intermedia ðŸ‡®ðŸ‡©
+  - name: Pt. Beon Intermedia
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -44,7 +44,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: Google LLC ðŸ‡®ðŸ‡©
+  - name: Google LLC
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -59,7 +59,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: Akamai Technologies, ðŸ‡®ðŸ‡©
+  - name: Akamai Technologies
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -74,7 +74,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: Pt Cloud Teknologi ðŸ‡®ðŸ‡©
+  - name: Pt Cloud Teknologi
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -89,7 +89,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: ðŸ‡ºðŸ‡¸ Alibaba us Technology ðŸ‡®ðŸ‡©
+  - name: Alibaba us Technology
     server: quiz.int.vidio.com
     port: 443
     type: vless

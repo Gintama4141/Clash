@@ -6,3 +6,4 @@ vless://00000000-0000-0000-0000-000000000000@quiz.int.vidio.com:443?flow=&host=i
 vless://00000000-0000-0000-0000-000000000000@quiz.int.vidio.com:443?flow=&host=id-vpnvip.my.id&path=%2Fvl%3D103.133.223.50%3A2096&security=tls&sni=id-vpnvip.my.id&type=ws#Pt%20Cloud%20Teknologi
 vless://00000000-0000-0000-0000-000000000000@quiz.int.vidio.com:443?flow=&host=id-vpnvip.my.id&path=%2Fvl%3D8.215.23.33%3A587&security=tls&sni=id-vpnvip.my.id&type=ws#Alibaba%20us%20Technology
 vless://00000000-0000-0000-0000-000000000000@quiz.int.vidio.com:443?flow=&host=id-vpnvip.my.id&path=%2Fvl%3D165.154.48.233%3A587&security=tls&sni=id-vpnvip.my.id&type=ws#UCLOUD%20INFORMATION
+vless://00000000-0000-0000-0000-000000000000@quiz.int.vidio.com:443?flow=&host=id-vpnvip.my.id&path=%2Fvl%3D43.133.145.156%3A53136&security=tls&sni=id-vpnvip.my.id&type=ws#Shenzhen%20Tencent

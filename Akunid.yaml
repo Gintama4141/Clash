@@ -104,7 +104,7 @@ proxies:
       headers:
         Host: id-vpnvip.my.id
     udp: true
-  - name: UCLOUD INFORMATION ðŸ‡®ðŸ‡©
+  - name: UCLOUD INFORMATION
     server: quiz.int.vidio.com
     port: 443
     type: vless
@@ -116,6 +116,21 @@ proxies:
     network: ws
     ws-opts:
       path: /vl=165.154.48.233:587
+      headers:
+        Host: id-vpnvip.my.id
+    udp: true
+  - name: Shenzhen Tencent
+    server: quiz.int.vidio.com
+    port: 443
+    type: vless
+    uuid: 00000000-0000-0000-0000-000000000000
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id-vpnvip.my.id
+    network: ws
+    ws-opts:
+      path: /vl=43.133.145.156:53136
       headers:
         Host: id-vpnvip.my.id
     udp: true

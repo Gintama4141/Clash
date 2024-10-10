@@ -179,7 +179,6 @@
         "early_data_header_name": "Sec-WebSocket-Protocol"
       },
       "domain_strategy": "ipv4_only"
-      }
     },
     {
       "type": "direct",

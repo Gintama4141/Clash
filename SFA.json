@@ -39,8 +39,8 @@
       },
       {
         "domain_suffix": [
-          "id4.hijitoko.com",
-          "id5.tunnelx.cloud"
+          "id-vpnvim.my.id",
+          "quiz.int.vidio.com"
         ],
         "server": "direct-dns",
         "rewrite_ttl": 20
@@ -105,16 +105,16 @@
       "tag": "Internet",
       "outbounds": [
         "Best Latency",
-        "JALA ID",
-        "HERZA ID"
+        "Alibaba",
+        "Akamai"
       ]
     },
     {
       "type": "urltest",
       "tag": "Best Latency",
       "outbounds": [
-        "JALA ID",
-        "HERZA ID"
+        "Alibaba",
+        "Akamai"
       ],
       "url": "http://cp.cloudflare.com/",
       "interval": "1m0s",

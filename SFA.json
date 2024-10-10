@@ -7,13 +7,13 @@
     "servers": [
       {
         "tag": "Internet-dns",
-        "address": "https://cloudflare-dns.com/dns-query",
+        "address": "1.1.1.1",
         "strategy": "ipv4_only",
         "detour": "Internet"
       },
       {
         "tag": "Best Latency-dns",
-        "address": "https://cloudflare-dns.com/dns-query",
+        "address": "1.1.1.1",
         "strategy": "ipv4_only",
         "detour": "Best Latency"
       },

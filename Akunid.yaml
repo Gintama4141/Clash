@@ -1,19 +1,4 @@
 proxies:
-  - name: HOSTKEY B.V.
-    server: quiz.int.vidio.com
-    port: 443
-    type: vless
-    uuid: 00000000-0000-0000-0000-000000000000
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: id-vpnvip.my.id
-    network: ws
-    ws-opts:
-      path: /vl=194.58.56.169:443
-      headers:
-        Host: id-vpnvip.my.id
-    udp: true
   - name: Rumahweb
     server: quiz.int.vidio.com
     port: 443

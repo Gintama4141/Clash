@@ -1,8 +1,8 @@
 proxies:
   - name: UNINET
     server: quiz.int.vidio.com
-    type: vmess
     port: 443
+    type: vmess
     uuid: ponselNOdA58xwjYzMH7G
     alterId: 0
     cipher: auto
@@ -17,8 +17,8 @@ proxies:
     udp: true
   - name: SDC
     server: quiz.int.vidio.com
-    type: vmess
     port: 443
+    type: vmess
     uuid: ponselZZwjLu2o2vcJ3zv
     alterId: 0
     cipher: auto

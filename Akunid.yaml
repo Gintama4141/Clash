@@ -27,7 +27,7 @@ proxies:
     servername: sdc.ifast.my.id
     network: ws
     ws-opts:
-    path: /vmess
+      path: /vmess
       headers:
         Host: sdc.ifast.my.id
     udp: true

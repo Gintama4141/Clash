@@ -31,16 +31,3 @@ proxies:
       headers:
         Host: sdc.ifast.my.id
     udp: true
-  - name: habil
-    server: quiz.int.vidio.com
-    port: 443
-    type: trojan
-    password: f6fdd66b-6121-4044-a07a-bae075e7a0f3
-    skip-cert-verify: true
-    sni: quiz.int.vidio.com.izzi.biz.id
-    network: ws
-    ws-opts:
-      path: /trojan
-      headers:
-        Host: id-ikd.izzi.biz.id
-    udp: true

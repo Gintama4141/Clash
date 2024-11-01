@@ -1,0 +1,249 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent # info / warning / error / debug / silent
+allow-lan: true
+bind-address: "*"
+unified-delay: true # Unified Delay
+find-process-mode: strict
+include-android-user: [0, 10]
+exclude-package: []
+include-package: []
+udp: true
+keep-alive-idle: 600 # Idle time Reduce battery consumption on mobile devices
+keep-alive-interval: 30 # Interval time
+global-client-fingerprint: random
+tcp-concurrent: false # TCP Concurrency
+
+# External Control (API)
+external-controller: 0.0.0.0:9090
+secret: fbrn02
+# external-ui: ui
+# external-ui-url: https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
+# external-ui-name: metacubexd
+# secret: 123456
+
+# Customize GEO download address
+geodata-loader: memconservative # standard / memconservative
+geodata-mode: false # dont forget make true for use geodata
+geo-auto-update: false
+geo-update-interval: 24
+geox-url:
+  geoip: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat"
+  geosite: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat"
+  mmdb: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb"
+  asn: "https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb"
+  
+# cache
+profile:
+  store-selected: true # Store the API policy group selection for next startup
+  store-fake-ip: true # Store the fakeip mapping table. When the domain name is connected again, use the original mapping address
+  
+hosts:
+  cacerts.digicert.com: 104.21.21.147
+  ota.googlezip.net: 127.0.0.1
+  ota-cache1.googlezip.net: 127.0.0.1
+  ota-cache2.googlezip.net: 127.0.0.1
+  
+# Domain name sniffing  
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    QUIC:
+      ports: [443,8443]
+      override-destination: true
+      sniffing: [http, tls] # add ", quic" after tls
+      port-whitelist: [80, 443, 8080, 8443]
+ # force-domain: # Force sniffing, don't add it randomly
+ #  - +.v2ex.com
+ # skip-domain: # Ignore sniffing
+ #  - 'Mijia Cloud'
+ #  - '+.push.apple.com'
+ #  - '+.wechat.com'
+ #  - '+.qpic.cn'
+ #  - '+.qq.com'
+ #  - '+.wechatapp.com'
+    
+ntp:
+  enable: false
+  write-to-system: true
+  server: time.apple.com
+  port: 123
+  interval: 30
+  
+# Virtual network card mode  
+tun:
+  enable: true
+  mtu: 9000
+  device: utun
+  stack: system # gvisor / mixed / system
+  dns-hijack:
+  - any:53
+  - tcp://any:53
+  auto-route: true
+  strict-route: false
+  auto-redirect: true
+  auto-detect-interface: true
+  
+# DNS settings  
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:7874
+  prefer-h3: false
+  use-host: true # Custom DNS
+  use-system-hosts: false # Use system DNS true / false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter: # fake ip whitelist list The following addresses will not send fakeip mapping for connection
+  - '*'
+  - "*.lan"
+  
+# DNS server used to resolve non-IP DNS, only supports pure IP
+  nameserver:
+  - https://cloudflare-dns.com/dns-query
+  - https://dns.google/dns-query
+  
+  fallback:
+  - tls://1.1.1.1
+  - tls://8.8.4.4
+  
+  fallback-filter:
+    geoip: true
+    geoip-code: ID
+    geosite:
+      - gfw
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - '+.google.com'
+      - '+.facebook.com'
+      - '+.youtube.com'
+      - '+.telegram.com'
+  
+# DNS default server
+  default-nameserver:
+  - 1.1.1.1
+  - 1.0.0.1
+  - 8.8.8.8
+  - 8.8.4.4
+  
+  proxy-server-nameserver:
+  - 112.215.203.246 #DNS XL
+  - 112.215.203.247 #DNS XL
+  - 112.215.203.248 #DNS XL
+  - 112.215.203.254 #DNS XL
+  - 112.215.198.248 #DNS XL
+  - 112.215.198.254 #DNS XL
+  - "[2400:9800:2:2::246]" # DNS XL
+  
+  # Override DNS policy Example
+  nameserver-policy:
+    '+.googlesyndication.com': '1.1.1.1'
+    'geosite:category-ads-all': rcode://success
+proxies:
+  - name: ID4-JALA
+    server: quiz.int.vidio.com
+    type: vless
+    port: 443
+    uuid: 9d41ffda-f286-41ea-9c43-c07a7e93ba59
+    tls: true
+    skip-cert-verify: true
+    servername: quiz.int.vidio.com.id4.hijitoko.com
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: quiz.int.vidio.com.id4.hijitoko.com
+    udp: true
+  - name: ID4-JALA1
+    server: img.email1.vidio.com
+    type: vless
+    port: 443
+    uuid: 9d41ffda-f286-41ea-9c43-c07a7e93ba59
+    tls: true
+    skip-cert-verify: true
+    servername: img.email1.vidio.com.id4.hijitoko.com
+    network: ws
+    ws-opts:
+      path: /vless
+      headers:
+        Host: img.email1.vidio.com.id4.hijitoko.com
+    udp: true
+  - name: IKD
+    server: quiz.int.vidio.com
+    type: vmess
+    port: 443
+    uuid: 022df6f0-515a-44ca-865d-d6d73e146950
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: id-ikd.izzi.biz.id
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: id-ikd.izzi.biz.id
+    udp: true
+  - name: CTN
+    server: quiz.int.vidio.com
+    type: vmess
+    port: 443
+    uuid: 03dc271a-45b9-41cc-8d5c-09729001458a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ctn-1.ultrassh.id
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: ctn-1.ultrassh.id
+    udp: true
+proxy-groups:
+- name: MENU
+  type: fallback
+  url: https://www.google.com/generate_204
+  interval: 5
+  lazy: true
+  disable-udp: false
+  proxies:
+    - JALA
+    - BACKUP
+- name: JALA 
+  type: url-test
+  url: https://www.google.com/generate_204
+  interval: 150
+  tolerance: 5
+  disable-udp: false
+  proxies:
+  - ID4-JALA
+  - ID4-JALA1
+- name: BACKUP
+  type: url-test
+  url: https://www.google.com/generate_204
+  interval: 300
+  tolerance: 5
+  disable-udp: false
+  proxies:
+  - CTN
+  - IKD
+rules:
+- MATCH,MENU
+
